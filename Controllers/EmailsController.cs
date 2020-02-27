@@ -30,7 +30,7 @@ public async Task<ActionResult<Emails>> PostEmails(Emails emails)
 {
   db.Emails.Add(emails);
   await db.SaveChangesAsync();
-  return Ok(Emails);
+  return Ok(emails);
 }
   }
 }
