@@ -10,10 +10,11 @@ using dgcEmailAPI.Models;
 namespace dgcEmailAPI.Controllers
 {
   [Route("api/[controller]")]
+  [ApiController]
 
   public class EmailsController:ControllerBase
   {
-    private readonly DatabaseContext database;
+    private readonly DatabaseContext db;
     public EmailsController(DatabaseContext context)
     {
       db=context;
