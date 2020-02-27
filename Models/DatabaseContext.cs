@@ -7,7 +7,16 @@ namespace dgcEmailAPI.Models
 {
   public partial class DatabaseContext : DbContext
   {
+    public DbSet<Emails> Emails {get;set;}
 
+    public DatabaseContext()
+    {
+
+    }
+    public DatabaseContext(DbContextOptions<DatabaseContext> options):base(options)
+    {
+      
+    }
     private string ConvertPostConnectionToConnectionString(string connection)
     {
       var _connection = connection.Replace("postgres://", String.Empty);
