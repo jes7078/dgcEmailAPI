@@ -1,9 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace dgcEmailAPI.Models
-
-{
+namespace dgcEmailAPI.Models {
   public class Emails
   {
     public int Id {get;set;}

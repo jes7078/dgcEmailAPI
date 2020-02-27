@@ -20,10 +20,10 @@ namespace dgcEmailAPI.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Emails>>> GetAllEmails{}
+    public async Task<ActionResult<IEnumerable<Emails>>> GetAllEmails()
     {
       return await db.Emails.ToListAsync();
     }
-    
+
   }
 }
