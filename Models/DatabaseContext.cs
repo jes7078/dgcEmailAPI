@@ -9,14 +9,6 @@ namespace dgcEmailAPI.Models
   {
     public DbSet<Emails> Emails {get;set;}
 
-    public DatabaseContext()
-    {
-
-    }
-    public DatabaseContext(DbContextOptions<DatabaseContext> options):base(options)
-    {
-      
-    }
     private string ConvertPostConnectionToConnectionString(string connection)
     {
       var _connection = connection.Replace("postgres://", String.Empty);
@@ -29,7 +21,6 @@ namespace dgcEmailAPI.Models
       if (!optionsBuilder.IsConfigured)
       {
         var envConn = Environment.GetEnvironmentVariable("DATABASE_URL");
-#warning Update this connection string to point to your own database.
         var conn = "server=localhost;database=dgcEmailAPIDatabase";
         if (envConn != null)
         {
