@@ -32,5 +32,22 @@ public async Task<ActionResult<Emails>> PostEmails(Emails emails)
   await db.SaveChangesAsync();
   return Ok(emails);
 }
+
+[HttpDelete("{id}")]
+public async Task<ActionResult<Emails>> DeleteEmails(int id)
+{
+  var email = await db.Emails.FindAsync(id);
+  if(email==null)
+  {
+    return NotFound();
+  }
+  db.Emails.Remove(email);
+  await db.SaveChangesAsync();
+  return email;
+}
+private bool EmailsExists(int id)
+{
+  return db.Emails.Any(e=>e.Id==id);
+}
   }
 }
